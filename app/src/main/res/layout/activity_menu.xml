@@ -1,0 +1,984 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F5F5F5">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/green_main"
+        android:gravity="center_vertical"
+        android:padding="15dp">
+
+        <ImageView
+            android:id="@+id/iv_menu"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            app:srcCompat="@android:drawable/ic_menu_sort_by_size"
+            android:contentDescription="Menu Icon" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="🍱 Kimbap.Jo"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:gravity="center" />
+
+        <ImageView
+            android:id="@+id/iv_profile"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:src="@drawable/profile"
+            android:contentDescription="Profile Icon" />
+
+    </LinearLayout>
+
+    <!-- SCROLLVIEW - SEMUA KONTEN BISA DI SCROLL -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- SEARCH BAR -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="15dp"
+                app:cardCornerRadius="25dp"
+                app:cardElevation="3dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:paddingStart="15dp"
+                    android:paddingEnd="15dp">
+
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        app:srcCompat="@android:drawable/ic_menu_search"
+                        android:contentDescription="Search Icon" />
+
+                    <EditText
+                        android:id="@+id/et_search"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="🔍 Search menu..."
+                        android:textSize="13sp"
+                        android:background="@null"
+                        android:paddingStart="10dp"
+                        android:inputType="text"
+                        android:autofillHints="no" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingStart="15dp"
+                    android:paddingEnd="15dp">
+
+                    <TextView
+                        android:id="@+id/menu_category_kimbap"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@drawable/bg_button_green"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:minWidth="84dp"
+                        android:paddingStart="14dp"
+                        android:paddingEnd="14dp"
+                        android:text="Kimbap"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/menu_category_sidedish"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@drawable/bg_button_green"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:minWidth="84dp"
+                        android:paddingStart="14dp"
+                        android:paddingEnd="14dp"
+                        android:text="Side Dish"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/menu_category_ricebowl"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@drawable/bg_button_green"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:minWidth="84dp"
+                        android:paddingStart="14dp"
+                        android:paddingEnd="14dp"
+                        android:text="Rice Bowl"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/menu_category_esserut"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:background="@drawable/bg_button_green"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:minWidth="84dp"
+                        android:paddingStart="14dp"
+                        android:paddingEnd="14dp"
+                        android:text="Es Serut"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
+
+
+
+
+
+            <!-- MENU TITLE -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="📌 Menu"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"/>
+
+            <!-- GRID MENU 2 KOLOM - 16 CARD -->
+            <GridLayout
+                android:id="@+id/menu_grid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="2"
+                android:padding="8dp">
+
+                <!-- CARD 1: Kimbab Ayam Katsu -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card1"
+                    android:layout_width="0dp"
+                    android:layout_height="200dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="4dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardBackgroundColor="@color/green_main"
+                    app:cardElevation="3dp"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="120dp"
+                            android:scaleType="centerCrop"
+                            app:srcCompat="@drawable/kimbab_ayam_katsu"
+                            android:contentDescription="Kimbab Ayam Katsu" />
+
+                        <TextView
+                            android:id="@+id/category_kimbap"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="🍗 Kimbab Ayam Katsu"
+                            android:textColor="@color/white"
+                            android:textStyle="bold"
+                            android:textSize="12sp"
+                            android:layout_marginTop="8dp"
+                            android:maxLines="2"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Rp 31.500"
+                            android:textColor="@color/white"
+                            android:textSize="11sp"
+                            android:layout_marginTop="4dp"/>
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- CARD 2: Kimbab Tuna Spicy -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card2"
+                    android:layout_width="0dp"
+                    android:layout_height="200dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="4dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardBackgroundColor="@color/green_main"
+                    app:cardElevation="3dp"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="120dp"
+                            android:scaleType="centerCrop"
+                            app:srcCompat="@drawable/kimbab_tuna_spicy"
+                            android:contentDescription="Kimbab Tuna Spicy" />
+
+                        <TextView
+                            android:id="@+id/category_kimbap"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="🐟 Kimbab Tuna Spicy"
+                            android:textColor="@color/white"
+                            android:textStyle="bold"
+                            android:textSize="12sp"
+                            android:layout_marginTop="8dp"
+                            android:maxLines="2"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Rp 32.000"
+                            android:textColor="@color/white"
+                            android:textSize="11sp"
+                            android:layout_marginTop="4dp"/>
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- CARD 3: Kimbab Beef Bulgogi -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card3"
+                    android:layout_width="0dp"
+                    android:layout_height="200dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="4dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardBackgroundColor="@color/green_main"
+                    app:cardElevation="3dp"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="120dp"
+                            android:scaleType="centerCrop"
+                            app:srcCompat="@drawable/nasi_ayam_katsu_blackpepper"
+                            android:contentDescription="Kimbab Beef Bulgogi" />
+
+                        <TextView
+                            android:id="@+id/category_kimbap"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="🥩 Kimbab Beef Bulgogi"
+                            android:textColor="@color/white"
+                            android:textStyle="bold"
+                            android:textSize="12sp"
+                            android:layout_marginTop="8dp"
+                            android:maxLines="2"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Rp 45.000"
+                            android:textColor="@color/white"
+                            android:textSize="11sp"
+                            android:layout_marginTop="4dp"/>
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- CARD 4: Nasi Ayam Katsu Sambal Bawang -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card4"
+                    android:layout_width="0dp"
+                    android:layout_height="200dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="4dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardBackgroundColor="@color/green_main"
+                    app:cardElevation="3dp"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="120dp"
+                            android:scaleType="centerCrop"
+                            app:srcCompat="@drawable/nasi_ayam_katsu_sambal_bawang"
+                            android:contentDescription="Nasi Ayam Katsu Sambal Bawang" />
+
+                        <TextView
+                            android:id="@+id/category_ricebowl"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="🍚 Nasi Ayam Katsu Sambal Bawang"
+                            android:textColor="@color/white"
+                            android:textStyle="bold"
+                            android:textSize="12sp"
+                            android:layout_marginTop="8dp"
+                            android:maxLines="2"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Rp 28.500"
+                            android:textColor="@color/white"
+                            android:textSize="11sp"
+                            android:layout_marginTop="4dp"/>
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- CARD 5: Nasi Ayam Katsu Mentega -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card5"
+                    android:layout_width="0dp"
+                    android:layout_height="200dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="4dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardBackgroundColor="@color/green_main"
+                    app:cardElevation="3dp"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="120dp"
+                            android:scaleType="centerCrop"
+                            app:srcCompat="@drawable/nasi_ayam_katsu_mentega"
+                            android:contentDescription="Nasi Ayam Katsu Mentega" />
+
+                        <TextView
+                            android:id="@+id/category_ricebowl"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="🧈 Nasi Ayam Katsu Mentega"
+                            android:textColor="@color/white"
+                            android:textStyle="bold"
+                            android:textSize="12sp"
+                            android:layout_marginTop="8dp"
+                            android:maxLines="2"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Rp 52.000"
+                            android:textColor="@color/white"
+                            android:textSize="11sp"
+                            android:layout_marginTop="4dp"/>
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- CARD 6: Nasi Ayam Katsu Polos -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card6"
+                    android:layout_width="0dp"
+                    android:layout_height="200dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="4dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardBackgroundColor="@color/green_main"
+                    app:cardElevation="3dp"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="120dp"
+                            android:scaleType="centerCrop"
+                            app:srcCompat="@drawable/nasi_ayam_goreng_katsu_polos"
+                            android:contentDescription="Nasi Ayam Katsu Polos" />
+
+                        <TextView
+                            android:id="@+id/category_ricebowl"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="🍚 Nasi Ayam Katsu Polos"
+                            android:textColor="@color/white"
+                            android:textStyle="bold"
+                            android:textSize="12sp"
+                            android:layout_marginTop="8dp"
+                            android:maxLines="2"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Rp 48.000"
+                            android:textColor="@color/white"
+                            android:textSize="11sp"
+                            android:layout_marginTop="4dp"/>
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- CARD 7: Nasi Ayam Teriyaki + Telur -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card7"
+                    android:layout_width="0dp"
+                    android:layout_height="200dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="4dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardBackgroundColor="@color/green_main"
+                    app:cardElevation="3dp"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="120dp"
+                            android:scaleType="centerCrop"
+                            app:srcCompat="@drawable/nasi_ayam_teriyaki_telur"
+                            android:contentDescription="Nasi Ayam Teriyaki + Telur" />
+
+                        <TextView
+                            android:id="@+id/category_ricebowl"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="🍳 Nasi Ayam Teriyaki + Telur"
+                            android:textColor="@color/white"
+                            android:textStyle="bold"
+                            android:textSize="12sp"
+                            android:layout_marginTop="8dp"
+                            android:maxLines="2"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Rp 38.000"
+                            android:textColor="@color/white"
+                            android:textSize="11sp"
+                            android:layout_marginTop="4dp"/>
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- CARD 8: Nasi Telur Dadar -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card8"
+                    android:layout_width="0dp"
+                    android:layout_height="200dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="4dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardBackgroundColor="@color/green_main"
+                    app:cardElevation="3dp"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="120dp"
+                            android:scaleType="centerCrop"
+                            app:srcCompat="@drawable/nasi_telur_dadar"
+                            android:contentDescription="Nasi Telur Dadar" />
+
+                        <TextView
+                            android:id="@+id/category_ricebowl"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="🍳 Nasi Telur Dadar"
+                            android:textColor="@color/white"
+                            android:textStyle="bold"
+                            android:textSize="12sp"
+                            android:layout_marginTop="8dp"
+                            android:maxLines="2"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Rp 42.000"
+                            android:textColor="@color/white"
+                            android:textSize="11sp"
+                            android:layout_marginTop="4dp"/>
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- CARD 9: Kimbab Goreng Keju -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card9"
+                    android:layout_width="0dp"
+                    android:layout_height="200dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="4dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardBackgroundColor="@color/green_main"
+                    app:cardElevation="3dp"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="120dp"
+                            android:scaleType="centerCrop"
+                            app:srcCompat="@drawable/kimbab_sosis_keju"
+                            android:contentDescription="Kimbab Goreng Keju" />
+
+                        <TextView
+                            android:id="@+id/category_kimbap"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="🧀 Kimbab Goreng Keju"
+                            android:textColor="@color/white"
+                            android:textStyle="bold"
+                            android:textSize="12sp"
+                            android:layout_marginTop="8dp"
+                            android:maxLines="2"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Rp 31.500"
+                            android:textColor="@color/white"
+                            android:textSize="11sp"
+                            android:layout_marginTop="4dp"/>
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- CARD 10: Kimbab Goreng Ayam -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card10"
+                    android:layout_width="0dp"
+                    android:layout_height="200dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="4dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardBackgroundColor="@color/green_main"
+                    app:cardElevation="3dp"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="120dp"
+                            android:scaleType="centerCrop"
+                            app:srcCompat="@drawable/kimbab_goreng_ayam"
+                            android:contentDescription="Kimbab Goreng Ayam" />
+
+                        <TextView
+                            android:id="@+id/category_kimbap"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="🍗 Kimbab Goreng Ayam"
+                            android:textColor="@color/white"
+                            android:textStyle="bold"
+                            android:textSize="12sp"
+                            android:layout_marginTop="8dp"
+                            android:maxLines="2"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Rp 30.000"
+                            android:textColor="@color/white"
+                            android:textSize="11sp"
+                            android:layout_marginTop="4dp"/>
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- CARD 11: Kimbab Sayur -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card11"
+                    android:layout_width="0dp"
+                    android:layout_height="200dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="4dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardBackgroundColor="@color/green_main"
+                    app:cardElevation="3dp"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="120dp"
+                            android:scaleType="centerCrop"
+                            app:srcCompat="@drawable/kimbab_sayur"
+                            android:contentDescription="Kimbab Sayur" />
+
+                        <TextView
+                            android:id="@+id/category_kimbap"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="🥬 Kimbab Sayur"
+                            android:textColor="@color/white"
+                            android:textStyle="bold"
+                            android:textSize="12sp"
+                            android:layout_marginTop="8dp"
+                            android:maxLines="2"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Rp 32.000"
+                            android:textColor="@color/white"
+                            android:textSize="11sp"
+                            android:layout_marginTop="4dp"/>
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- CARD 12: Side Dish -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card12"
+                    android:layout_width="0dp"
+                    android:layout_height="200dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="4dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardBackgroundColor="@color/green_main"
+                    app:cardElevation="3dp"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="120dp"
+                            android:scaleType="centerCrop"
+                            app:srcCompat="@drawable/side_dish"
+                            android:contentDescription="Side Dish" />
+
+                        <TextView
+                            android:id="@+id/category_sidedish"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="🍽️ Side Dish"
+                            android:textColor="@color/white"
+                            android:textStyle="bold"
+                            android:textSize="12sp"
+                            android:layout_marginTop="8dp"
+                            android:maxLines="2"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Rp 25.000"
+                            android:textColor="@color/white"
+                            android:textSize="11sp"
+                            android:layout_marginTop="4dp"/>
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- CARD 13: Es Serut -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card13"
+                    android:layout_width="0dp"
+                    android:layout_height="200dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="4dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardBackgroundColor="@color/green_main"
+                    app:cardElevation="3dp"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="120dp"
+                            android:scaleType="centerCrop"
+                            app:srcCompat="@drawable/es_serut"
+                            android:contentDescription="Es Serut" />
+
+                        <TextView
+                            android:id="@+id/category_esserut"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="🍧 Es Serut"
+                            android:textColor="@color/white"
+                            android:textStyle="bold"
+                            android:textSize="12sp"
+                            android:layout_marginTop="8dp"
+                            android:maxLines="2"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Rp 27.000"
+                            android:textColor="@color/white"
+                            android:textSize="11sp"
+                            android:layout_marginTop="4dp"/>
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- CARD 14: Kimbab Goreng Tuna Spicy -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card14"
+                    android:layout_width="0dp"
+                    android:layout_height="200dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="4dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardBackgroundColor="@color/green_main"
+                    app:cardElevation="3dp"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="120dp"
+                            android:scaleType="centerCrop"
+                            app:srcCompat="@drawable/kimbab_goreng_tuna_spicy"
+                            android:contentDescription="Kimbab Goreng Tuna Spicy" />
+
+                        <TextView
+                            android:id="@+id/category_kimbap"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="🐟 Kimbab Goreng Tuna Spicy"
+                            android:textColor="@color/white"
+                            android:textStyle="bold"
+                            android:textSize="12sp"
+                            android:layout_marginTop="8dp"
+                            android:maxLines="2"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Rp 40.000"
+                            android:textColor="@color/white"
+                            android:textSize="11sp"
+                            android:layout_marginTop="4dp"/>
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- CARD 15: Kimbab Seafood -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card15"
+                    android:layout_width="0dp"
+                    android:layout_height="200dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="4dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardBackgroundColor="@color/green_main"
+                    app:cardElevation="3dp"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="120dp"
+                            android:scaleType="centerCrop"
+                            app:srcCompat="@drawable/kimbab_tuna_spicy"
+                            android:contentDescription="Kimbab Seafood" />
+
+                        <TextView
+                            android:id="@+id/category_kimbap"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="🦐 Kimbab Seafood"
+                            android:textColor="@color/white"
+                            android:textStyle="bold"
+                            android:textSize="12sp"
+                            android:layout_marginTop="8dp"
+                            android:maxLines="2"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Rp 44.000"
+                            android:textColor="@color/white"
+                            android:textSize="11sp"
+                            android:layout_marginTop="4dp"/>
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- CARD 16: Kimbab Bulgogi -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card16"
+                    android:layout_width="0dp"
+                    android:layout_height="200dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="4dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardBackgroundColor="@color/green_main"
+                    app:cardElevation="3dp"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="120dp"
+                            android:scaleType="centerCrop"
+                            app:srcCompat="@drawable/kimbab_sosis_keju"
+                            android:contentDescription="Kimbab Bulgogi" />
+
+                        <TextView
+                            android:id="@+id/category_kimbap"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="🥩 Kimbab Bulgogi"
+                            android:textColor="@color/white"
+                            android:textStyle="bold"
+                            android:textSize="12sp"
+                            android:layout_marginTop="8dp"
+                            android:maxLines="2"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Rp 43.000"
+                            android:textColor="@color/white"
+                            android:textSize="11sp"
+                            android:layout_marginTop="4dp"/>
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+            </GridLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="8dp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <!-- BOTTOM NAVIGATION DENGAN EMOJI -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:background="@color/green_main"
+        app:itemIconTint="@color/bottom_nav_item_color"
+        app:itemTextColor="@color/bottom_nav_item_color"
+        app:itemIconSize="22dp"
+        app:itemPaddingTop="15dp"
+        app:itemPaddingBottom="6dp"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/bottom_menu" />
+
+</LinearLayout>

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFFFF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:background="#2E7D32">
+
+        <ImageView
+            android:id="@+id/btn_back"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@android:drawable/ic_menu_revert" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:id="@+id/btn_profile"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/profile" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:padding="24dp">
+
+            <TextView
+                android:id="@+id/tv_total_payment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total Pembayaran : Rp 0"
+                android:textColor="#2E7D32"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="18dp" />
+
+            <ImageView
+                android:id="@+id/img_qris"
+                android:layout_width="280dp"
+                android:layout_height="280dp"
+                android:src="@drawable/ic_qr_code"
+                android:scaleType="fitCenter"
+                android:background="#DDDDDD"
+                android:padding="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="QRIS : Kimbab Store"
+                android:textColor="#111111"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginTop="18dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Scan menggunakan:"
+                android:textColor="#555555"
+                android:textSize="14sp"
+                android:layout_marginTop="18dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="12dp">
+
+                <TextView
+                    android:layout_width="70dp"
+                    android:layout_height="32dp"
+                    android:text="DANA"
+                    android:textColor="#2E7D32"
+                    android:textSize="12sp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_badge_green" />
+
+                <TextView
+                    android:layout_width="70dp"
+                    android:layout_height="32dp"
+                    android:text="OVO"
+                    android:textColor="#2E7D32"
+                    android:textSize="12sp"
+                    android:gravity="center"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/bg_badge_green" />
+
+                <TextView
+                    android:layout_width="70dp"
+                    android:layout_height="32dp"
+                    android:text="GoPay"
+                    android:textColor="#2E7D32"
+                    android:textSize="12sp"
+                    android:gravity="center"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/bg_badge_green" />
+
+                <TextView
+                    android:layout_width="90dp"
+                    android:layout_height="32dp"
+                    android:text="M-Banking"
+                    android:textColor="#2E7D32"
+                    android:textSize="12sp"
+                    android:gravity="center"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/bg_badge_green" />
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_sudah_bayar"
+                android:layout_width="220dp"
+                android:layout_height="52dp"
+                android:text="Saya Sudah Bayar"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
+                android:backgroundTint="#2E7D32"
+                android:layout_marginTop="36dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_batalkan"
+                android:layout_width="220dp"
+                android:layout_height="52dp"
+                android:text="Batalkan"
+                android:textAllCaps="false"
+                android:textColor="#2E7D32"
+                android:textSize="15sp"
+                android:backgroundTint="#FFFFFF"
+                android:layout_marginTop="10dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFFFF">
+
+    <!-- TOP BAR -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:background="#2E7D32">
+
+        <TextView
+            android:id="@+id/iv_menu"
+            android:layout_width="36dp"
+            android:layout_height="match_parent"
+            android:text="☰"
+            android:textSize="32sp"
+            android:textColor="#FFFFFF"
+            android:gravity="center_vertical" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/iv_profile"
+            android:layout_width="36dp"
+            android:layout_height="match_parent"
+            android:text="●"
+            android:textSize="31sp"
+            android:textColor="#FFFFFF"
+            android:gravity="center" />
+    </LinearLayout>
+
+    <!-- CONTENT -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:background="#FFFFFF"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="42dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bahasa"
+            android:textColor="#111111"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            android:layout_marginStart="9dp"
+            android:layout_marginBottom="17dp" />
+
+        <TextView
+            android:id="@+id/btn_english"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:background="@drawable/bg_bahasa_button"
+            android:gravity="center_vertical"
+            android:paddingStart="11dp"
+            android:text="English"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/btn_indonesia"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_bahasa_button"
+            android:gravity="center_vertical"
+            android:paddingStart="11dp"
+            android:text="Indonesia"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:textSize="13sp" />
+
+    </LinearLayout>
+
+    <!-- BOTTOM NAV -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="39dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="#2E7D32">
+
+        <TextView
+            android:id="@+id/nav_home"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="▦"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/nav_favorite"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="♥"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/nav_cart"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="🛒"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:gravity="center" />
+
+    </LinearLayout>
+
+</LinearLayout>

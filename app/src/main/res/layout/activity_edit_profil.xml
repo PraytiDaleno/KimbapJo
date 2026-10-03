@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F7F7F7"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/green_main"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
+
+        <ImageView
+            android:id="@+id/iv_menu"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:contentDescription="Kembali"
+            android:src="@android:drawable/ic_menu_revert"
+            app:tint="@color/white" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Edit Profil"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/iv_profile"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:contentDescription="Profil"
+            android:src="@drawable/ic_profile"
+            app:tint="@color/white" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_gravity="center_horizontal"
+                android:contentDescription="Foto profil"
+                android:src="@drawable/ic_profile"
+                app:tint="@color/green_main" />
+
+            <TextView style="@style/EditProfileLabel" android:text="Nama" />
+            <EditText
+                android:id="@+id/et_nama"
+                style="@style/EditProfileInput"
+                android:inputType="textPersonName" />
+
+            <TextView style="@style/EditProfileLabel" android:text="Email" />
+            <EditText
+                android:id="@+id/et_email"
+                style="@style/EditProfileInput"
+                android:inputType="textEmailAddress" />
+
+            <TextView style="@style/EditProfileLabel" android:text="Username" />
+            <EditText
+                android:id="@+id/et_username"
+                style="@style/EditProfileInput"
+                android:enabled="false"
+                android:inputType="textPersonName" />
+
+            <TextView style="@style/EditProfileLabel" android:text="Password" />
+            <EditText
+                android:id="@+id/et_password"
+                style="@style/EditProfileInput"
+                android:inputType="textPassword" />
+
+            <TextView style="@style/EditProfileLabel" android:text="Nomor Telepon" />
+            <EditText
+                android:id="@+id/et_phone"
+                style="@style/EditProfileInput"
+                android:inputType="phone" />
+
+            <TextView
+                android:id="@+id/btn_save"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/bg_button_green"
+                android:gravity="center"
+                android:text="Simpan Perubahan"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:background="@color/green_main"
+        app:itemIconSize="22dp"
+        app:itemIconTint="@color/bottom_nav_item_color"
+        app:itemPaddingTop="6dp"
+        app:itemPaddingBottom="6dp"
+        app:itemTextColor="@color/bottom_nav_item_color"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/bottom_menu" />
+
+</LinearLayout>

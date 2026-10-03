@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#2E7D32">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:text="Dashboard"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:gravity="center_vertical"
+        android:paddingStart="14dp"
+        android:background="#8086AC" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#FFFFFF"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:background="#2E7D32"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="16dp"
+                android:paddingEnd="8dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Dashboard"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/btnAdminLogout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:background="@drawable/bg_admin_logout"
+                    android:clickable="true"
+                    android:contentDescription="Logout admin"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    android:text="KELUAR"
+                    android:textColor="#FFFFFF"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="34dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="95dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:padding="12dp"
+                    android:background="@drawable/bg_card_green">
+
+                    <TextView
+                        android:text="Pesanan hari ini"
+                        android:textColor="#FFFFFF"
+                        android:textSize="14sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/tvPesananHariIni"
+                        android:text="15"
+                        android:textColor="#FFFFFF"
+                        android:textSize="30sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="95dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:padding="12dp"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/bg_card_white">
+
+                    <TextView
+                        android:text="Sedang diproses"
+                        android:textColor="#555555"
+                        android:textSize="14sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/tvDiproses"
+                        android:text="4"
+                        android:textColor="#2E7D32"
+                        android:textSize="30sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="95dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:padding="12dp"
+                    android:background="@drawable/bg_card_white_green">
+
+                    <TextView
+                        android:text="Selesai"
+                        android:textColor="#555555"
+                        android:textSize="14sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/tvSelesai"
+                        android:text="11"
+                        android:textColor="#2E7D32"
+                        android:textSize="30sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="95dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:padding="12dp"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/bg_card_stock">
+
+                    <TextView
+                        android:text="Stok Menipis"
+                        android:textColor="#555555"
+                        android:textSize="14sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/tvStokMenipis"
+                        android:text="3"
+                        android:textColor="#2E7D32"
+                        android:textSize="30sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:text="Pesanan Terbaru"
+                android:textColor="#222222"
+                android:textSize="15sp"
+                android:layout_marginTop="28dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:id="@+id/cardOrder1"
+                android:layout_width="match_parent"
+                android:layout_height="125dp"
+                android:orientation="vertical"
+                android:padding="12dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_order_card">
+
+                <TextView
+                    android:id="@+id/tvStatusOrder1"
+                    android:text="Baru"
+                    android:textColor="#2E7D32"
+                    android:textSize="11sp"
+                    android:gravity="center"
+                    android:layout_gravity="end"
+                    android:background="@drawable/bg_badge_green"
+                    android:layout_width="48dp"
+                    android:layout_height="20dp" />
+
+                <TextView
+                    android:id="@+id/tvCodeOrder1"
+                    android:text="#KBP003"
+                    android:textColor="#2E7D32"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tvCustomerOrder1"
+                    android:text="Prayti N"
+                    android:textColor="#222222"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tvItemsOrder1"
+                    android:text="2 x Kimbap Tuna . 1 X Es Serut\n13.42"
+                    android:textColor="#999999"
+                    android:textSize="11sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <Button
+                    android:id="@+id/btnProsesPesanan"
+                    android:text="Proses Pesanan"
+                    android:textAllCaps="false"
+                    android:textColor="#FFFFFF"
+                    android:textSize="12sp"
+                    android:background="@drawable/bg_button_green"
+                    android:layout_width="135dp"
+                    android:layout_height="36dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/cardOrder2"
+                android:layout_width="match_parent"
+                android:layout_height="125dp"
+                android:orientation="vertical"
+                android:padding="12dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/bg_order_card">
+
+                <TextView
+                    android:id="@+id/tvStatusOrder2"
+                    android:text="Diproses"
+                    android:textColor="#F57C00"
+                    android:textSize="10sp"
+                    android:gravity="center"
+                    android:layout_gravity="end"
+                    android:background="@drawable/bg_badge_orange"
+                    android:layout_width="55dp"
+                    android:layout_height="20dp" />
+
+                <TextView
+                    android:id="@+id/tvCodeOrder2"
+                    android:text="#KBP004"
+                    android:textColor="#2E7D32"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tvCustomerOrder2"
+                    android:text="Jevelin S"
+                    android:textColor="#222222"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tvItemsOrder2"
+                    android:text="1 x Nasi Ayam Katsu\n13.30"
+                    android:textColor="#999999"
+                    android:textSize="11sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/cardOrder3"
+                android:layout_width="match_parent"
+                android:layout_height="125dp"
+                android:orientation="vertical"
+                android:padding="12dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/bg_order_card">
+
+                <TextView
+                    android:id="@+id/tvStatusOrder3"
+                    android:text="Selesai"
+                    android:textColor="#2E7D32"
+                    android:textSize="10sp"
+                    android:gravity="center"
+                    android:layout_gravity="end"
+                    android:background="@drawable/bg_badge_green"
+                    android:layout_width="50dp"
+                    android:layout_height="20dp" />
+
+                <TextView
+                    android:id="@+id/tvCodeOrder3"
+                    android:text="#KBP005"
+                    android:textColor="#2E7D32"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tvCustomerOrder3"
+                    android:text="Christo W"
+                    android:textColor="#222222"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tvItemsOrder3"
+                    android:text="1 x Kimbap Sayur . 1 x Nasi Telur Dadar\n13.00"
+                    android:textColor="#999999"
+                    android:textSize="11sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:orientation="horizontal"
+        android:background="#2E7D32"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/navDashboard"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="18dp"
+            android:layout_marginVertical="8dp"
+            android:padding="8dp"
+            android:background="@drawable/bg_admin_nav_active"
+            android:src="@drawable/ic_admin_dashboard"
+            android:tint="#FFC107"
+            android:scaleType="center"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <ImageView
+            android:id="@+id/navPesanan"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="14dp"
+            android:src="@drawable/ic_admin_orders"
+            android:tint="#FFFFFF"
+            android:scaleType="center"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <ImageView
+            android:id="@+id/navSetting"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="14dp"
+            android:src="@drawable/ic_admin_detail"
+            android:tint="#FFFFFF"
+            android:scaleType="center"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <ImageView
+            android:id="@+id/navStok"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="14dp"
+            android:src="@drawable/ic_admin_stock"
+            android:tint="#FFFFFF"
+            android:scaleType="center"
+            android:clickable="true"
+            android:focusable="true" />
+
+    </LinearLayout>
+
+</LinearLayout>
